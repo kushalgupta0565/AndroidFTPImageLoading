@@ -53,6 +53,7 @@ class BrowseDataPresenter : Presenter() {
         val width = res.getDimensionPixelSize(R.dimen.card_width)
         val height = res.getDimensionPixelSize(R.dimen.card_height)
         cardView.setMainImageDimensions(width, height)
+        cardView.infoVisibility = View.GONE
 
         val complete_image_path = "ftp://" + Constants.NETWORK_HOSTNAME + ":" + Constants.PORT_NO + Constants.NETWORK_FOLDER_NAME + imageData
         val imageFile = Constants.NETWORK_FOLDER_NAME + imageData
@@ -61,6 +62,7 @@ class BrowseDataPresenter : Presenter() {
 
         Glide.with(context).load(ftpModel)
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .centerCrop()
                 .into(cardView.mainImageView)
 
     }
