@@ -41,6 +41,8 @@
         <activity
             android:name=".ui.browse.BrowseActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".ui.image.ImageActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
